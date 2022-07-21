@@ -10,9 +10,19 @@ function getRandomValue(){
     return values[Math.floor(Math.random() * 7)]
 }
 
-setInterval(() => {
-    value1.innerText = getRandomValue()
-    value2.innerText = getRandomValue()
-    value3.innerText = getRandomValue()
+let animationId;
+function updateAnimation(newSpeed){
+    if(animationId) clearInterval(animationId)
 
-}, 300)
+    animationId  = setInterval(() => {
+        value1.innerText = getRandomValue()
+        value2.innerText = getRandomValue()
+        value3.innerText = getRandomValue()
+    }, 1000/newSpeed)
+}
+
+inpspeed.onchange = function(ev){
+    // console.log('value changed',)
+    document.documentElement.style.setProperty('--speed', ev.target.value)
+    updateAnimation(ev.target.value)
+}
