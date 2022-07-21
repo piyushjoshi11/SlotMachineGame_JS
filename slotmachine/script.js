@@ -2,6 +2,12 @@ let value1 = document.getElementById('value1')
 let value2 = document.getElementById('value2')
 let value3 = document.getElementById('value3')
 
+
+let inpSpeed = document.getElementById('inpSpeed')
+let stopButton=document.getElementById('stopButton')
+let spinButton=document.getElementById('spinButton')
+let value=document.getElementsByClassName('value')
+
 let values = [
     '😇','😈','🌸', '🤣','😄','🌚', '🐣'
 ]
@@ -21,7 +27,19 @@ function updateAnimation(newSpeed){
     }, 1000/newSpeed)
 }
 
-inpspeed.onchange = function(ev){
+
+$(document).ready(function(){
+    $("#stopButton").click(function(){
+      clearInterval(animationId)
+          $(".value").css("animation-play-state", "paused");
+    });
+    $("#spinButton").click(function(){
+        $(".value").css("animation-play-state", "running");
+    });
+});
+
+
+inpSpeed.onchange = function(ev){
     // console.log('value changed',)
     document.documentElement.style.setProperty('--speed', ev.target.value)
     updateAnimation(ev.target.value)

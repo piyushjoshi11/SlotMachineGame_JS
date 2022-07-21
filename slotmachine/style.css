@@ -1,3 +1,9 @@
+body
+{
+    margin-left: 15%;
+}
+
+
 :root{
     --speed:5;
 }
@@ -15,8 +21,36 @@
     font-size: 30px;
     margin-left: 30px;
     width: 100px;
+    background-color: red;
     
 }
+
+
+label
+{
+    display: inline-block;
+    font-size: 25pt;
+    margin-left: 15%;
+}
+.buttonInput
+{
+    display: inline-flex;
+}
+#stopButton
+{
+    margin-left: 150px;
+    background-color: red;
+    font-size: 25pt;
+    box-shadow: 2px 2px black;
+}
+#spinButton
+{
+    margin-left: 100px;
+    background-color: red;
+    font-size: 25pt;
+    box-shadow: 2px 2px black;
+}
+
 
 .slot{
     height: 250px ;
